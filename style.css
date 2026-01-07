@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+#jp {
+  font-size: 26px;
+  margin: 40px 0 20px;
+}
+
+#display {
+  font-size: 24px;
+  letter-spacing: 6px;
+  margin-bottom: 30px;
+}
+
+#input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  left: -1000px;
+  top: 0;
+}
+
+
+button {
+  font-size: 16px;
+  padding: 12px 24px;
+  margin: 10px;
+}

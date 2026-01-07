@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英単語学習アプリ</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="title">
+  <h1>英単語学習</h1>
+  <button onclick="startGame()">スタート</button>
+</div>
+
+<div id="game" class="hidden">
+  <div id="jp"></div>
+  <div id="display"></div>
+
+  <input id="input">
+
+  <button id="checkBtn" onclick="checkAnswer()">答える</button>
+  <button id="nextBtn" onclick="nextWord()" class="hidden">次へ</button>
+
+  <div id="result"></div>
+  <div id="score"></div>
+</div>
+
+<div id="finish" class="hidden">
+  <h2 id="finalScore"></h2>
+  <button onclick="backToTitle()">タイトルへ</button>
+</div>
+
+<script src="app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+</script>
+</body>
+</html>
