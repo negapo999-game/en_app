@@ -16,3 +16,9 @@ self.addEventListener("fetch", e => {
     caches.match(e.request).then(r => r || fetch(e.request))
   );
 });
+
+
+var CACHE_NAME = 'pwa-sample-caches';
+var urlsToCache = [
+	'/poster-keisuke.github.io/',
+];
