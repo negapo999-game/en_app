@@ -2,6 +2,10 @@ self.addEventListener("install", () => {
   console.log("Service Worker installed");
 });
 
-self.addEventListener("fetch", () => {
-  // 何もしない（←これが安定）
+self.addEventListener("fetch", event => {
+  event.respondWith(
+    fetch(event.request)
+  );
 });
+;
+
