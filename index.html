@@ -6,6 +6,11 @@
 <title>英単語学習アプリ</title>
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+</script>
 </head>
 <body>
 
@@ -33,10 +38,7 @@
 </div>
 
 <script src="app.js"></script>
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js");
-}
-</script>
+
 </body>
 </html>
+
