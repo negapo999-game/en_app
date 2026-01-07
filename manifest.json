@@ -1,7 +1,8 @@
 {
   "name": "英単語学習アプリ",
   "short_name": "英単語",
-  "start_url": "index.html",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "theme_color": "#2196f3",
   "background_color": "#ffffff",
@@ -18,3 +19,4 @@
     }
   ]
 }
+
