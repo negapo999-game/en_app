@@ -1,36 +1,92 @@
+/* ===== 全体 ===== */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 30px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #eef1f6;
+  color: #222;
 }
 
+/* アプリ全体 */
+.app {
+  max-width: 420px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  box-sizing: border-box;
+}
+
+/* ===== カードUI ===== */
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== タイトル ===== */
+h1 {
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+/* ===== 日本語単語 ===== */
+#word {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 16px 0 24px;
+}
+
+/* ===== 英単語表示 ===== */
+#display {
+  font-size: 26px;
+  letter-spacing: 6px;
+  margin-bottom: 32px;
+}
+
+/* ===== 結果表示 ===== */
+#result {
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+/* ===== スコア ===== */
+#score {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* ===== ボタン ===== */
+button {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  border: none;
+  border-radius: 14px;
+  background: #2962ff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(41, 98, 255, 0.35);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* 次へボタン */
+#nextBtn {
+  background: #2e7d32;
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.35);
+}
+
+/* ===== 非表示 ===== */
 .hidden {
   display: none;
-}
-
-#jp {
-  font-size: 26px;
-  margin: 40px 0 20px;
-}
-
-#display {
-  font-size: 24px;
-  letter-spacing: 6px;
-  margin-bottom: 30px;
-}
-
-#input {
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
-  left: -1000px;
-  top: 0;
-}
-
-
-button {
-  font-size: 16px;
-  padding: 12px 24px;
-  margin: 10px;
 }
