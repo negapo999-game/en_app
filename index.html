@@ -13,32 +13,38 @@ if ("serviceWorker" in navigator) {
 </script>
 </head>
 <body>
+  <div class="app">
 
-<div id="title">
-  <h1>英単語学習</h1>
-  <button onclick="startGame()">スタート</button>
-</div>
+    <!-- タイトル画面 -->
+    <div id="title" class="card">
+      <h1>英単語学習アプリ</h1>
+      <button onclick="startGame()">スタート</button>
+    </div>
 
-<div id="game" class="hidden">
-  <div id="jp"></div>
-  <div id="display"></div>
+    <!-- ゲーム画面 -->
+    <div id="game" class="hidden">
+      <div class="card">
+        <div id="word"></div>
+        <div id="display"></div>
 
-  <input id="input">
+        <div id="result"></div>
+        <div id="score"></div>
 
-  <button id="checkBtn" onclick="checkAnswer()">答える</button>
-  <button id="nextBtn" onclick="nextWord()" class="hidden">次へ</button>
+        <button id="checkBtn" onclick="checkAnswer()">答える</button>
+        <button id="nextBtn" class="hidden" onclick="nextWord()">次の問題</button>
+      </div>
+    </div>
 
-  <div id="result"></div>
-  <div id="score"></div>
-</div>
+    <!-- リザルト画面 -->
+    <div id="finish" class="hidden card">
+      <h2 id="finalScore"></h2>
+      <button onclick="backToTitle()">タイトルへ戻る</button>
+    </div>
 
-<div id="finish" class="hidden">
-  <h2 id="finalScore"></h2>
-  <button onclick="backToTitle()">タイトルへ</button>
-</div>
+  </div>
 
-<script src="app.js"></script>
-
+  <script src="app.js"></script>
 </body>
 </html>
+
 
