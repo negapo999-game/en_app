@@ -13,35 +13,92 @@ if ("serviceWorker" in navigator) {
 </script>
 </head>
 <body>
-  <div class="app">
+<div class="app">
+  <!-- タイトル画面 -->
+  <div id="title" class="card">
+    <h1>英単語学習アプリ</h1>
+    <button onclick="showRangeSelect()">スタート</button>
+    <button onclick="showWordList()">単語一覧</button>
+    <button onclick="showWrongList()">間違えた単語</button>
+  </div>
+  
+  <input
+    id="input"
+    type="text"
+    autocomplete="off"
+    autocapitalize="none"
+    spellcheck="false"
+    style="
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      height: 0;
+      width: 0;
+    ">
 
-    <!-- タイトル画面 -->
-    <div id="title" class="card">
-      <h1>英単語学習アプリ</h1>
-      <button onclick="startGame()">スタート</button>
+
+  <!-- ゲーム画面 -->
+  <div id="game" class="hidden">
+    <button id="backBtn" onclick="confirmBack()">← 戻る</button>
+
+    <div class="card">
+      <div id="word"></div>
+      <div id="display"></div>
+      <div id="questionNo"></div>
+
+      <div id="result"></div>
+      <div id="score"></div>
+
+      <button id="checkBtn" onclick="checkAnswer()">答える</button>
+      <button id="nextBtn" class="hidden" onclick="nextWord()">次の問題</button>
     </div>
+  </div>
 
-    <!-- ゲーム画面 -->
-    <div id="game" class="hidden">
-      <div class="card">
-        <div id="word"></div>
-        <div id="display"></div>
+  <div id="rangeSelect" class="hidden card">
+    <h2>出題範囲を選択</h2>
+    <div id="rangeButtons"></div>
+    <button onclick="backToTitle()">戻る</button>
+  </div>
 
-        <div id="result"></div>
-        <div id="score"></div>
+  <div id="modeSelect" class="hidden card">
+    <h2>出題数を選択</h2>
+    <button onclick="startQuiz(10)">10問連続</button>
+    <button onclick="startQuiz(30)">30問連続</button>
+    <button onclick="startQuiz(100)">100問連続</button>
+    <button onclick="backToRange()">戻る</button>
+  </div>
 
-        <button id="checkBtn" onclick="checkAnswer()">答える</button>
-        <button id="nextBtn" class="hidden" onclick="nextWord()">次の問題</button>
+  <!-- リザルト画面 -->
+  <div id="finish" class="hidden card">
+    <h2 id="finalScore"></h2>
+    <button onclick="backToTitle()">タイトルへ戻る</button>
+    <button onclick="startQuiz(MAX)">再挑戦</button>
+    <button onclick="wrongWordQuiz()">間違えた問題を再挑戦</button>
+  </div>
+
+  <!-- 単語一覧 -->
+  <div id="wordList" class="hidden">
+    <div class="card">
+      <h2>単語一覧</h2>
+      <ul id="wordListContent"></ul>
+      <button onclick="backToTitle()">戻る</button>
+      <div id="wordListPagination">
+        <button id="wordListPrev">◀</button>
+          <span id="wordListPageInfo"></span>
+        <button id="wordListNext">▶</button>
       </div>
     </div>
-
-    <!-- リザルト画面 -->
-    <div id="finish" class="hidden card">
-      <h2 id="finalScore"></h2>
-      <button onclick="backToTitle()">タイトルへ戻る</button>
-    </div>
-
   </div>
+
+  <!-- 間違えた単語一覧 -->
+  <div id="wrongList" class="hidden">
+    <div class="card">
+      <h2>間違えた単語</h2>
+      <ul id="wrongListContent"></ul>
+      <button onclick="backToTitle()">戻る</button>
+    </div>
+  </div>
+</div>
 
   <script src="app.js"></script>
 </body>
