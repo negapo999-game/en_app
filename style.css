@@ -35,6 +35,20 @@ h2 {
   margin-bottom: 16px;
 }
 
+#backBtn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: auto;
+  padding: 8px 14px;
+  font-size: 14px;
+  background: #ffffff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
 /* ===== 日本語単語 ===== */
 #word {
   font-size: 30px;
@@ -47,6 +61,12 @@ h2 {
   font-size: 26px;
   letter-spacing: 6px;
   margin-bottom: 32px;
+}
+
+#questionNo {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
 }
 
 /* ===== 結果表示 ===== */
@@ -89,4 +109,14 @@ button:active {
 /* ===== 非表示 ===== */
 .hidden {
   display: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 8px 0;
+  font-size: 18px;
 }
